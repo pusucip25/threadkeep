@@ -67,6 +67,13 @@ def detect_lang(src):
     return "Romanian" if hits > 25 else "English"
 
 
+def _read(path):
+    try:
+        return open(path, encoding="utf-8", errors="ignore").read()
+    except OSError as e:
+        sys.exit(f"cannot read {path}: {e.strerror}")
+
+
 def tok(s):
     return max(1, round(len(s) / 3.5))
 
@@ -293,7 +300,7 @@ def main():
     if not a.file:
         ap.error("pass --file or --show <id>")
     src = (sys.stdin.read() if a.file == "-"
-           else open(a.file, encoding="utf-8", errors="ignore").read()).strip()
+           else _read(a.file)).strip()
     if not src:
         sys.exit("empty source")
 

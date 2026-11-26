@@ -71,7 +71,7 @@ api    : in=73,161 out=4,238  finish=stop   (~20 s, ~2¢)
 
 ```
 source : 8,523 chars ~2,435 tok (144 lines)
-brief  : 6,684 chars ~1,910 tok   →  78% of the source
+brief  : 6,777 chars ~1,936 tok   →  79.5% of the source
 entries: 12 (12 with verified anchor)
 facts  : 15 verified
 ```
